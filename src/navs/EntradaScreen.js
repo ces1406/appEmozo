@@ -20,7 +20,7 @@ class EntradaScreen extends Component {
                         </View>
                         <View style={estiloLocal.contenedor1} >
                             <Text style={estiloLocal.contenido1}>E-Mozo es la app para poder manejarte en forma fácil y cómoda dentro de Restaurantes y locales
-                                            gastronómicos, podés hacer busquedas y reservas de los locales que te gusten más o que te queden mas
+                                            gastronómicos, podés hacer busquedas de los locales que te gusten más o que te queden mas
                                             cercanos y realizar distintas acciones dentro de ellos: ubicar tu mesa, consultar platos, invitar amigos
                                             a tu mesa, dividir los gastos, etc.
                             </Text>

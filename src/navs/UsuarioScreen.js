@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { View, Text,TouchableHighlight,StyleSheet,ImageBackground} from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import BusquedasScreen from './BusquedasScreen';
-import ReservasScreen from './ReservasScreen';
 import DatosScreen from './DatosScreen';
 import NavEnLocalScreen from './ActualScreen';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -28,12 +27,7 @@ class UsuarioScreen extends Component {
                     <TouchableHighlight  onPress={this._buscarLocal} style={estiloLocal.boton1}>
                         <Text style={estiloLocal.contenido1} >Busqueda de locales</Text>
                     </TouchableHighlight>
-                </View> 
-                <View>
-                    <TouchableHighlight  onPress={this._reservas} style={estiloLocal.boton1}>
-                        <Text style={estiloLocal.contenido1} >Mis Reservas</Text>
-                    </TouchableHighlight>
-                </View> 
+                </View>  
                 <View>
                     <TouchableHighlight  onPress={this._datosUsuario} style={estiloLocal.boton1}>
                         <Text style={estiloLocal.contenido1} >Mis datos </Text>
@@ -60,7 +54,6 @@ class UsuarioScreen extends Component {
     Usuario: UsuarioScreen,
     Busquedas: BusquedasScreen,
     Datos: DatosScreen,
-    Reservas: ReservasScreen, 
     EnLocal: NavEnLocalScreen   
 },{
     initialRouteName: 'Usuario'
