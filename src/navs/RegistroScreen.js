@@ -1,12 +1,18 @@
 import React, {Component} from 'react';
 import { View, Text, TextInput,TouchableHighlight, StyleSheet,ImageBackground} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
+import {contenedores,estiloLocal} from '../estilos/estilos';
 
 class RegistroScreen extends Component {
     constructor(props){
         super(props);
         this.state = {
+            nombre:'',
+            apellido:'',
             usuario:'',
+            telefono:'',
+            direccion:'',
+            fechaNac:'',
             pass1:'',
             pass2:'',
             mail:'',
@@ -24,6 +30,16 @@ class RegistroScreen extends Component {
             <View>
             <ImageBackground source={require('../imgs/cena2.jpg')} style={{width: '100%', height: '100%'}}>
             <View style={{flex:1, alignItems:'center',justifyContent:'center',backgroundColor:'rgba(32,41,48,0.7)'}}>
+                <Text style={estiloLocal.contenido1}>Indique su nombre</Text>
+                <TextInput onChange={(user)=>this.setState({usuario:nombre})} value={this.state.nombre} style={estiloLocal.inputs}></TextInput>
+                <Text style={estiloLocal.contenido1}>Indique su apellido</Text>
+                <TextInput onChange={(user)=>this.setState({usuario:apellido})} value={this.state.apellido} style={estiloLocal.inputs}></TextInput>
+                <Text style={estiloLocal.contenido1}>Indique su dirección</Text>
+                <TextInput onChange={(user)=>this.setState({usuario:direccion})} value={this.state.direccion} style={estiloLocal.inputs}></TextInput>
+                <Text style={estiloLocal.contenido1}>Indique su número telefónico</Text>
+                <TextInput onChange={(user)=>this.setState({usuario:telefono})} value={this.state.telefono} style={estiloLocal.inputs}></TextInput>
+                <Text style={estiloLocal.contenido1}>Indique su fecha de nacimiento</Text>
+                <TextInput onChange={(user)=>this.setState({usuario:fechaNac})} value={this.state.fechaNac} style={estiloLocal.inputs}></TextInput>
                 <Text style={estiloLocal.contenido1}>Elija un nombre de usuario</Text>
                 <TextInput onChange={(user)=>this.setState({usuario:user})} value={this.state.usuario} style={estiloLocal.inputs}></TextInput>
                 <Text style={estiloLocal.contenido1}>Indica un mail </Text>
@@ -43,29 +59,4 @@ class RegistroScreen extends Component {
         );
     }
 }
-const estiloLocal = StyleSheet.create({
-    inputs:{
-        height:30,
-        width:300,
-        borderColor:'gray',
-        borderWidth:1
-    },
-    contenido1:{
-        padding: 4,
-        fontFamily: 'sans-serif-light',
-        fontWeight:'100',
-        fontSize: 21,
-        textAlign:'justify',
-        color:'rgba(226,247,245,1)',
-    },
-    boton1:{
-        marginTop: 10,
-        padding: 8,
-        borderWidth: 1,
-        borderStyle: 'solid',
-        borderColor: 'rgba(86,54,27,1)',
-        backgroundColor:'rgba(32,41,48,0.78)',
-        borderRadius: 5,
-    }
-})
 export default RegistroScreen; 

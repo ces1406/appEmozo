@@ -1,17 +1,18 @@
 import React, {Component} from 'react';
-import { View, Text,TouchableHighlight,StyleSheet,ImageBackground} from 'react-native';
-import { createStackNavigator } from 'react-navigation';
+import { View, Text,StyleSheet,ImageBackground} from 'react-native';
+import { createBottomTabNavigator,createMaterialTopTabNavigator } from 'react-navigation';
 import BusquedasScreen from './BusquedasScreen';
-import DatosScreen from './DatosScreen';
-import NavEnLocalScreen from './ActualScreen';
-import AsyncStorage from '@react-native-community/async-storage';
+import CuentaScreen from './CuentaScreen';
+import NavEnLocalScreen from './NavEnLocalScreen';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
-class UsuarioScreen extends Component {
+//class UsuarioScreen extends Component {
+/*class CerrarSesionScreen extends Component {
     static navigationOptions ={
-        title: 'Opciones para el usuario'
+        title: 'Salir'
     }
     _cerrarSesion = async () =>{
-        await AsyncStorage.clear();//harcodeado: por ahora todos somos usuarios registrados y logueados
+        await AsyncStorage.clear();
         this.props.navigation.navigate('NavInicio');
     } 
     _buscarLocal = ()=>{this.props.navigation.navigate('Busquedas'); }
@@ -24,82 +25,69 @@ class UsuarioScreen extends Component {
             <ImageBackground source={require('../imgs/cena2.jpg')} style={{width: '100%', height: '100%'}}>
             <View style={{flex:1, alignItems:'center',justifyContent:'center',backgroundColor:'rgba(32,41,48,0.7)'}}>    
                 <View>
-                    <TouchableHighlight  onPress={this._buscarLocal} style={estiloLocal.boton1}>
-                        <Text style={estiloLocal.contenido1} >Busqueda de locales</Text>
-                    </TouchableHighlight>
-                </View>  
-                <View>
-                    <TouchableHighlight  onPress={this._datosUsuario} style={estiloLocal.boton1}>
-                        <Text style={estiloLocal.contenido1} >Mis datos </Text>
-                    </TouchableHighlight>
-                </View> 
-                <View>
-                    <TouchableHighlight  onPress={this._reservaActual} style={estiloLocal.boton1}>
-                        <Text style={estiloLocal.contenido1} >Reserva actual</Text>
-                    </TouchableHighlight>
-                </View> 
-                <View>
-                    <TouchableHighlight  onPress={this._cerrarSesion} style={estiloLocal.boton1}>
-                        <Text style={estiloLocal.contenido1} >Cerrar Sesión</Text>
-                    </TouchableHighlight>
-                </View> 
+                <Text style={estiloLocal.contenido1}>
+                    aquí puedes buscar locales, acceder a datos de tu cuenta y si ya te encuentras en el local gastronómico
+                    escannear el codigo QR de una mesa para comenzar a disfrutar tu experiencia
+                </Text>
+                </View>
             </View>
             </ImageBackground>
             </View>
         );
     }
-}
+}*/
 
- const NavigatorUsuario = createStackNavigator ({
-    Usuario: UsuarioScreen,
-    Busquedas: BusquedasScreen,
-    Datos: DatosScreen,
-    EnLocal: NavEnLocalScreen   
-},{
-    initialRouteName: 'Usuario'
+//const NavigatorUsuario = createMaterialTopTabNavigator ({  
+const NavigatorUsuario = createBottomTabNavigator ({  
+/*         Salir: {
+            screen:()=>null,
+            navigationOptions:{
+                tabBarOnPress:async()=>{
+                    await AsyncStorage.clear();
+                    this.props.navigation.navigate('NavInicio');
+                },
+            }
+        }, */
+        Busquedas:{
+            screen:BusquedasScreen,
+        },
+        Cuenta: CuentaScreen,
+        EnLocal: {
+            screen:NavEnLocalScreen,
+        }   
+    },{    
+    initialRouteName: 'Cuenta',
+    navigationOptions:({navigation})=>{
+        const {routeName} = navigation.state.routes[navigation.state.index];
+        return {
+            header:null,
+            headerTitle: routeName,
+        };
+    },        
+    defaultNavigationOptions: ({ navigation })=>({
+        tabBarIcon: ({ focused, horizontal, tintColor})=>{            
+            const {routeName} = navigation.state;
+            let IconComponent = Ionicons;
+            let iconName;
+            if (routeName === 'Busquedas' ){
+                    iconName =`ios-search${focused?'':''}`;//-outline'}`;
+            }else if(routeName === 'Cuenta' ){
+                    iconName =`ios-person${focused?'':''}`;//-outline'}`;
+            }else if(routeName === 'EnLocal' ){
+                    iconName =`ios-restaurant${focused?'':''}`;//-outline'}`;
+            };
+            return <IconComponent name={iconName} size={45} color={tintColor} />;
+        }
+    }),
+    tabBarOptions: {
+        activeTintColor: 'rgba(19,14,36,1)',
+        inactiveTintColor: 'rgba(138,133,144,1)',
+        labelStyle: {
+            fontSize: 12,
+        },
+        style:{
+            height: 80,
+        },
+    },
 });
-
-const estiloLocal = StyleSheet.create({
-    fondo1:{
-        backgroundColor:'rgba(32,41,48,1)',
-    },
-    estilo1:{
-        alignItems: 'center',
-        padding:10,
-        position: 'relative'
-    },
-    titulo1: {
-        color:'rgba(226,247,245,1)',
-        fontFamily: 'sans-serif-thin',
-        fontWeight:'100',
-        fontSize:45,
-        textAlign: 'center',
-    },
-    contenedor1:{
-        marginTop: 60,
-        borderWidth: 2,
-        borderColor:'rgba(34,18,12,1)',
-        borderRadius:10,
-        borderStyle: 'solid',
-        position:'relative',
-    },
-    contenido1:{
-        padding: 4,
-        fontFamily: 'sans-serif-light',
-        fontWeight:'100',
-        fontSize: 21,
-        textAlign:'justify',
-        color:'rgba(226,247,245,1)',
-    },
-    boton1:{
-        marginTop: 10,
-        padding: 8,
-        borderWidth: 1,
-        borderStyle: 'solid',
-        borderColor: 'rgba(86,54,27,1)',
-        backgroundColor:'rgba(32,41,48,0.78)',
-        borderRadius: 5,
-    }
-});
-
 export default NavigatorUsuario; 

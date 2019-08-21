@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { View, Text, TextInput,StyleSheet, TouchableHighlight,ImageBackground} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
+import {contenedores,estiloLocal} from '../estilos/estilos';
 
 class InicioSesionScreen extends Component { 
     constructor(props){
@@ -23,7 +24,7 @@ class InicioSesionScreen extends Component {
             <ImageBackground source={require('../imgs/cena2.jpg')} style={{width: '100%', height: '100%'}}>
             <View style={{flex:1, alignItems:'center',justifyContent:'center',backgroundColor:'rgba(32,41,48,0.7)'}}>
                 <Text style={estiloLocal.contenido1}>Nombre de usuario</Text>
-                <TextInput onChange={(user)=>this.setState({usuario:user})} value={this.state.usuario} style={estiloLocal.inputs}></TextInput>
+                <TextInput onChange={(user)=>this.setState({usuario:user})} style={estiloLocal.inputs} selectionColor={'rgba(220,217,231,1)'}></TextInput>
                 <Text style={estiloLocal.contenido1}>Contraseña</Text>
                 <TextInput onChange={(pas)=>this.setState({pass: pas})} value={this.state.pass} style={estiloLocal.inputs}></TextInput>
                 <View>
@@ -37,29 +38,5 @@ class InicioSesionScreen extends Component {
         );
     }
 }
-const estiloLocal = StyleSheet.create({
-    inputs:{
-        height:30,
-        width:300,
-        borderColor:'gray',
-        borderWidth:1
-    },
-    contenido1:{
-        padding: 4,
-        fontFamily: 'sans-serif-light',
-        fontWeight:'100',
-        fontSize: 21,
-        textAlign:'justify',
-        color:'rgba(226,247,245,1)',
-    },
-    boton1:{
-        marginTop: 10,
-        padding: 8,
-        borderWidth: 1,
-        borderStyle: 'solid',
-        borderColor: 'rgba(86,54,27,1)',
-        backgroundColor:'rgba(32,41,48,0.78)',
-        borderRadius: 5,
-    }
-})
+
 export default InicioSesionScreen;

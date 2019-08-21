@@ -3,6 +3,7 @@ import { View, Text,StyleSheet,TouchableHighlight,ImageBackground} from 'react-n
 import { createStackNavigator } from 'react-navigation';
 import InicioSesionScreen from './InicioSesionScreen';
 import RegistroScreen from './RegistroScreen';
+import {contenedores,estiloLocal} from '../estilos/estilos';
 
 class AutenticacionScreen extends Component {
     static navigationOptions ={
@@ -43,32 +44,5 @@ const Navegador = createStackNavigator({
 },{
     initialRouteName: 'Autenticacion'
 });
-
-
-const estiloLocal = StyleSheet.create({
-    inputs:{
-        height:30,
-        width:300,
-        borderColor:'gray',
-        borderWidth:1
-    },
-    contenido1:{
-        padding: 4,
-        fontFamily: 'sans-serif-light',
-        fontWeight:'100',
-        fontSize: 21,
-        textAlign:'justify',
-        color:'rgba(226,247,245,1)',
-    },
-    boton1:{
-        marginTop: 10,
-        padding: 8,
-        borderWidth: 1,
-        borderStyle: 'solid',
-        borderColor: 'rgba(86,54,27,1)',
-        backgroundColor:'rgba(32,41,48,0.78)',
-        borderRadius: 5,
-    }
-})
 
 export default Navegador;
