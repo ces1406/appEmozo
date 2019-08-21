@@ -22,12 +22,12 @@ class AutenticacionScreen extends Component {
             <View style={{flex:1, alignItems:'center',justifyContent:'center',backgroundColor:'rgba(32,41,48,0.7)'}}>
                 <View>
                     <TouchableHighlight  onPress={this._iniciarRegistro} style={estiloLocal.boton1}>
-                        <Text style={estiloLocal.contenido1} >Registrarse</Text>
+                        <Text style={estiloLocal.textBoton1} >Registrarse</Text>
                     </TouchableHighlight>
                 </View> 
                 <View>
                     <TouchableHighlight  onPress={this._iniciarSesion} style={estiloLocal.boton1}>
-                        <Text style={estiloLocal.contenido1} >Iniciar sesion</Text>
+                        <Text style={estiloLocal.textBoton1} >Iniciar sesion</Text>
                     </TouchableHighlight>
                 </View> 
             </View>

@@ -23,13 +23,18 @@ class InicioSesionScreen extends Component {
         <View>
             <ImageBackground source={require('../imgs/cena2.jpg')} style={{width: '100%', height: '100%'}}>
             <View style={{flex:1, alignItems:'center',justifyContent:'center',backgroundColor:'rgba(32,41,48,0.7)'}}>
-                <Text style={estiloLocal.contenido1}>Nombre de usuario</Text>
+                <Text style={estiloLocal.etiquetaInput1}>Nombre de usuario</Text>
                 <TextInput onChange={(user)=>this.setState({usuario:user})} style={estiloLocal.inputs} selectionColor={'rgba(220,217,231,1)'}></TextInput>
-                <Text style={estiloLocal.contenido1}>Contraseña</Text>
+                <View style={{marginTop:40}}></View>
+                <Text style={estiloLocal.etiquetaInput1}>Contraseña</Text>
                 <TextInput onChange={(pas)=>this.setState({pass: pas})} value={this.state.pass} style={estiloLocal.inputs}></TextInput>
-                <View>
+                <View style={{marginTop:40}}>
                     <TouchableHighlight  onPress={this._iniciarSesion} style={estiloLocal.boton1}>
-                        <Text style={estiloLocal.contenido1} >Iniciar sesion</Text>
+                        <Text style={estiloLocal.textBoton1} >Iniciar sesion</Text>
+                    </TouchableHighlight>
+                    <View style={{marginTop:40}}></View>
+                    <TouchableHighlight  onPress={this._iniciarSesion} style={estiloLocal.boton1}>
+                        <Text style={estiloLocal.aviso1} >olvide mi contraseña</Text>
                     </TouchableHighlight>
                 </View> 
             </View>

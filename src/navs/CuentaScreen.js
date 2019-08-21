@@ -21,17 +21,17 @@ class CuentaScreen extends Component {
             <View >
                 <ImageBackground source={require('../imgs/cena2.jpg')} style={{width: '100%', height: '100%'}}>
                     <View style={{flex:1, alignItems:'center',justifyContent:'center',backgroundColor:'rgba(32,41,48,0.7)'}}>
-                        <TouchableHighlight  onPress={this._perfil} style={estiloLocal.boton1}>
-                            <Text style={estiloLocal.contenido1} >Mi perfil</Text>
+                        <TouchableHighlight  onPress={this._perfil} style={estiloLocal.boton2}>
+                            <Text style={estiloLocal.textBoton1} >Mi perfil</Text>
                         </TouchableHighlight>
-                        <TouchableHighlight  onPress={this._calificaciones} style={estiloLocal.boton1}>
-                            <Text style={estiloLocal.contenido1} >Mis calificaciones</Text>
+                        <TouchableHighlight  onPress={this._calificaciones} style={estiloLocal.boton2}>
+                            <Text style={estiloLocal.textBoton1} >Mis calificaciones</Text>
                         </TouchableHighlight>
-                        <TouchableHighlight  onPress={this._otro} style={estiloLocal.boton1}>
-                            <Text style={estiloLocal.contenido1} >-Algun otro-</Text>
+                        <TouchableHighlight  onPress={this._otro} style={estiloLocal.boton2}>
+                            <Text style={estiloLocal.textBoton1} >Mis favoritos</Text>
                         </TouchableHighlight>
-                        <TouchableHighlight  onPress={this._cerrarSesion} style={estiloLocal.boton1}>
-                            <Text style={estiloLocal.contenido1} >Cerrar Sesión</Text>
+                        <TouchableHighlight  onPress={this._cerrarSesion} style={estiloLocal.boton2}>
+                            <Text style={estiloLocal.textBoton1} >Cerrar Sesión</Text>
                         </TouchableHighlight>
                     </View>                     
                 </ImageBackground>

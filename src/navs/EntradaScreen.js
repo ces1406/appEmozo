@@ -23,16 +23,15 @@ class EntradaScreen extends Component {
                             <Text style={estiloLocal.titulo1}>E-Mozo</Text>
                         </View>
                         <View style={estiloLocal.contenedor1} >
-                            <Text style={estiloLocal.contenido1}>E-Mozo es la app para poder manejarte en forma fácil y cómoda dentro de Restaurantes y locales
-                                            gastronómicos, podés hacer busquedas de los locales que te gusten más o que te queden mas
+                            <Text style={estiloLocal.parrafo1}>E-Mozo es la app para poder manejarte en forma fácil y cómoda dentro de restaurantes y locales
+                                            gastronómicos, podés realizar busquedas de los locales que más te gusten o que te queden mas
                                             cercanos y realizar distintas acciones dentro de ellos: ubicar tu mesa, consultar platos, invitar amigos
-                                            a tu mesa, dividir los gastos, etc.
+                                            a tu mesa y dividir los gastos entre otras
                             </Text>
                         </View>
-                        <View>
-                            <Icon.Button name="ios-redo"><Text>Ordenar</Text></Icon.Button>                        
+                        <View style={{marginTop:40}}>                      
                             <TouchableHighlight  onPress={this._comenzar} style={estiloLocal.boton1}>
-                                <Text style={estiloLocal.contenido1} >Comenzar</Text>
+                                <Text style={estiloLocal.textBoton1} >Comenzar</Text>
                             </TouchableHighlight>
                         </View>
                     </View>

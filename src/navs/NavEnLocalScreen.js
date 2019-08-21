@@ -87,25 +87,30 @@ class EnLocalScreen extends Component {
             <View>
                 <ImageBackground source={require('../imgs/cena2.jpg')} style={{width: '100%', height: '100%'}}>
                     <View style={{flex:1, alignItems:'center',justifyContent:'center',backgroundColor:'rgba(32,41,48,0.7)'}}>
-                        <Text style={estiloLocal.contenido1}>Si ya estás en el establecimiento elige la opción "Escanear codigo QR"
-                            y enfoca el código QR que se encuentra en la mesa para registrarte en ella y comenzar a interactuar</Text> 
-                        <TouchableHighlight  onPress={this._escanearqr} style={estiloLocal.boton1}>
-                            <Text style={estiloLocal.contenido1} >Escanear el código QR</Text>
+                        <View style={estiloLocal.contenedor2}>
+                            <Text style={estiloLocal.parrafo2}>
+                                Si ya estás en el establecimiento elige la opción "Escanear codigo QR"
+                                y enfoca el código QR que se encuentra en la mesa para registrarte en ella, habilitar las demás 
+                                funciones y comenzar a interactuar
+                            </Text> 
+                        </View>
+                        <TouchableHighlight  onPress={this._escanearqr} style={estiloLocal.boton2}>
+                            <Text style={estiloLocal.textBoton1} >Escanear el código QR</Text>
                         </TouchableHighlight>
-                        <TouchableHighlight  onPress={this._vercarta} style={estiloLocal.boton1}>
-                            <Text style={estiloLocal.contenido1} >Ver la carta del local</Text>
+                        <TouchableHighlight  onPress={this._vercarta} style={estiloLocal.boton2}>
+                            <Text style={estiloLocal.textBoton1} >Ver la carta del local</Text>
                         </TouchableHighlight>
-                        <TouchableHighlight  onPress={this._hacerpedido} style={estiloLocal.boton1}>
-                            <Text style={estiloLocal.contenido1} >Realizar el pedido</Text>
+                        <TouchableHighlight  onPress={this._hacerpedido} style={estiloLocal.boton2}>
+                            <Text style={estiloLocal.textBoton1} >Realizar el pedido</Text>
                         </TouchableHighlight>
-                        <TouchableHighlight  onPress={this._invitar} style={estiloLocal.boton1}>
-                            <Text style={estiloLocal.contenido1} >Invitar un amigo a la mesa</Text>
+                        <TouchableHighlight  onPress={this._invitar} style={estiloLocal.boton2}>
+                            <Text style={estiloLocal.textBoton1} >Invitar un amigo a la mesa</Text>
                         </TouchableHighlight>
-                        <TouchableHighlight  onPress={this._llamarmozo} style={estiloLocal.boton1}>
-                            <Text style={estiloLocal.contenido1} >Llamar al mozo</Text>
+                        <TouchableHighlight  onPress={this._llamarmozo} style={estiloLocal.boton2}>
+                            <Text style={estiloLocal.textBoton1} >Llamar al mozo</Text>
                         </TouchableHighlight>
-                        <TouchableHighlight  onPress={this._pedircuenta} style={estiloLocal.boton1}>
-                            <Text style={estiloLocal.contenido1} >Pedir la cuenta</Text>
+                        <TouchableHighlight  onPress={this._pedircuenta} style={estiloLocal.boton2}>
+                            <Text style={estiloLocal.textBoton1} >Pedir la cuenta</Text>
                         </TouchableHighlight>
                     </View>
                 </ImageBackground>        
