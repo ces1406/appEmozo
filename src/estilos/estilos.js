@@ -1,17 +1,5 @@
 import {StyleSheet} from 'react-native';
-const fondos= StyleSheet.create({
-    fondo1:{
-        backgroundColor: 'rgba(32,41,48,1)',
-    }
-});
-const titulosTxt = StyleSheet.create({
-    titulo1: {
-        color:'rgba(255,247,198,1)',
-        fontWeight:'200',
-        fontSize:50,
-        textAlign: 'center',
-    }
-});
+
 const contenedores = StyleSheet.create({
     contenedor1:{
         borderWidth: 3,
@@ -24,11 +12,143 @@ const contenedores = StyleSheet.create({
         borderColor: 'rgba(54,46,43,1)',
     }
 });
-const botones = StyleSheet.create({
-    boton1: {
-        backgroundColor: 'rgba(205,219,169,1)',
-        borderColor: 'rgba(34,18,12,1)',
-        alignContent: 'center',
-    }
+const estiloLocal = StyleSheet.create({
+    titulo1: {
+        color:'rgba(226,247,245,1)',
+        fontFamily: 'sans-serif-thin',
+        fontWeight:'100',
+        fontSize:55,
+        textAlign: 'center',
+        textShadowOffset:{width:-1,height:1},
+        textShadowColor:'rgba(210,220,86,1)',
+        textShadowRadius:40,
+    },
+    titulo2: {
+        color:'rgba(226,247,245,1)',
+        fontFamily: 'sans-serif-thin',
+        fontWeight:'100',
+        fontSize:25,
+        textAlign: 'center',
+        textShadowOffset:{width:-1,height:1},
+        textShadowColor:'rgba(210,220,86,1)',
+        textShadowRadius:40,
+    },
+    contenedor1:{
+        backgroundColor:'rgba(16,28,40,0.52)',
+        marginTop: 60,
+        marginHorizontal: 10,
+        borderWidth: 0,
+        borderColor:'rgba(16,28,40,1)',
+        borderRadius:10,
+        borderStyle: 'solid',
+        position:'relative',
+    },
+    contenedor2:{
+        backgroundColor:'rgba(16,28,40,0.6)',
+        marginTop: 1,
+        marginHorizontal: 10,
+        borderWidth: 1,
+        borderColor:'rgba(11,8,3,0.5)',
+        borderRadius:10,
+        borderStyle: 'solid',
+        position:'relative',
+    },
+    parrafo1:{
+        color:'rgba(226,247,245,1)',        
+        margin: 4,
+        padding: 2,
+        fontFamily: 'sans-serif-light',
+        fontWeight:'100',
+        fontSize: 13,
+        textAlign:'justify',
+        textShadowOffset:{width:1,height:1},
+        textShadowColor:'rgba(1,1,1,1)',
+        textShadowRadius:10,
+        lineHeight:20        
+    },
+    parrafo2:{
+        color:'rgba(203,186,156,1)',        
+        margin: 2,
+        padding: 2,
+        fontFamily: 'sans-serif-light',
+        fontWeight:'100',
+        fontSize: 12,
+        textAlign:'justify',
+        textShadowOffset:{width:1,height:1},
+        textShadowColor:'rgba(1,1,1,1)',
+        textShadowRadius:10,
+        lineHeight:20        
+    },
+    boton1:{
+        marginTop: 10,
+        padding: 4,
+        borderWidth: 1,
+        borderStyle: 'solid',
+        borderColor:'rgba(16,28,40,0.82)',
+        backgroundColor:'rgba(16,28,40,0.74)',
+        borderRadius: 6,
+        width: 200,
+    },
+    boton2:{
+        marginTop: 10,
+        padding: 4,
+        borderWidth: 1,
+        borderStyle: 'solid',
+        borderColor:'rgba(11,8,3,1)',
+        backgroundColor:'rgba(16,28,40,0.74)',
+        borderRadius: 6,
+        width: 280,
+    },
+    textBoton1:{
+        color:'rgba(226,247,245,1)',        
+        margin: 2,
+        padding: 2,
+        fontFamily: 'sans-serif-light',
+        fontWeight:'200',
+        fontSize: 17,
+        textAlign:'center',        
+    },
+    inputs:{
+        backgroundColor: 'rgba(228,224,243,1)',
+        width: 240,
+        borderRadius: 4,
+        height:28,
+        fontWeight:'200',
+        fontSize: 15,
+        color:'rgba(16,13,21,1)',
+        margin: 1,
+        padding: 1,
+    },
+    etiquetaInput1:{
+        color:'rgba(226,247,245,1)',        
+        margin: 4,
+        padding: 2,
+        fontFamily: 'sans-serif-light',
+        fontWeight:'100',
+        fontSize: 16,
+        textAlign:'center',
+        textShadowOffset:{width:1,height:1},
+        textShadowColor:'rgba(1,1,1,1)',
+        textShadowRadius:10,
+    },
+    etiquetaInput2:{
+        color:'rgba(226,247,245,1)',        
+        margin: 1,
+        padding: 1,
+        fontFamily: 'sans-serif-light',
+        fontWeight:'100',
+        fontSize: 14,
+        textAlign:'left',
+        textShadowOffset:{width:1,height:1},
+        textShadowColor:'rgba(1,1,1,1)',
+        textShadowRadius:10,
+    },
+    aviso1: {
+        color:'rgba(229,163,71,1)',
+        fontFamily: 'sans-serif-thin',
+        fontWeight:'100',
+        fontSize:12,
+        textAlign: 'center',
+    },
 });
-export {fondos,contenedores,titulosTxt,botones};
+export {contenedores,estiloLocal};
